@@ -104,6 +104,7 @@ int main(int argc, char const *argv[])
                 printf("수를 잘못 누르셨으면 b를 눌러주세요\n");
                 goto RESET_POINT_6;
             }
+            system("clear");
             printf("총 160점 중 %.3f점\n",normal_score/2 + senggibu + coverletter + award);
         } else if (spec == 2){
             int award;

@@ -3,24 +3,24 @@
 #include "dimigo.h"
 
 int cover_letter(){
-    char point;
+    int point;
     printf("---------------------------------------------------------------------------\n");
     printf("                             자기소개서 완성도 선택\n");
     printf("---------------------------------------------------------------------------\n");
-    printf("A\n");
-    printf("B\n");
-    printf("C\n");
-    printf("D\n");
-    printf("E\n");
+    printf("1등급\n");
+    printf("2등급\n");
+    printf("3등급\n");
+    printf("4등급\n");
+    printf("5등급\n");
+    printf("숫자만 입력\n");
     printf("입력 => ");
 
     getchar();
-    scanf("%c",&point);
+    scanf("%d",&point);
     system("clear");
     printf("자기소개서 완성도: %c\n",point);
 
-    if ((point >= 97) && (point <= 122)) return 20 - (point-97);
-    if ((point >= 65) && (point <= 90)) return 20 - (point-65);
+    return 20 - (point-1);
 
 
 
