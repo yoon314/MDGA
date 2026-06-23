@@ -28,39 +28,39 @@ int main(int argc, char const *argv[])
     int select;
     RESET_POINT_1:
     select = hello_select(); // 1: 일전, 2: 특전
-    printf("수를 잘못 누르셨으면 b를 눌러주세요");
+    printf("수를 잘못 누르셨으면 b를 눌러주세요\n");
 
     ch = getchar();
 
     if (ch == 'b') {
-        printf("입력값을 초기화합니다.\n");
         system("clear");
+        printf("수를 잘못 누르셨으면 b를 눌러주세요\n");
         goto RESET_POINT_1;
     }
 
     float normal_score;
     RESET_POINT_2:
     normal_score = sub_grade(); // 일전 점수
-    printf("수를 잘못 누르셨으면 b를 눌러주세요");
+    printf("수를 잘못 누르셨으면 b를 눌러주세요\n");
 
     ch = getchar();
 
     if (ch == 'b') {
-        printf("입력값을 초기화합니다.\n");
         system("clear");
+        printf("수를 잘못 누르셨으면 b를 눌러주세요\n");
         goto RESET_POINT_2;
     }
 
     float senggibu;
     RESET_POINT_3:
     senggibu = seng_gi_bu(); // 생기부 점수
-    printf("수를 잘못 누르셨으면 b를 눌러주세요");
+    printf("수를 잘못 누르셨으면 b를 눌러주세요\n");
 
     ch = getchar();
 
     if (ch == 'b') {
-        printf("입력값을 초기화합니다.\n");
         system("clear");
+        printf("수를 잘못 누르셨으면 b를 눌러주세요\n");
         goto RESET_POINT_3;
     }
     
@@ -69,26 +69,25 @@ int main(int argc, char const *argv[])
         int spec;
         RESET_POINT_4:
         spec = spec_select(); // 1. 대회입상, 2. 자기추천
-        printf("수를 잘못 누르셨으면 b를 눌러주세요");
+        printf("수를 잘못 누르셨으면 b를 눌러주세요\n");
 
         ch = getchar();
 
         if (ch == 'b') {
-            printf("입력값을 초기화합니다.\n");
             system("clear");
+            printf("수를 잘못 누르셨으면 b를 눌러주세요\n");
             goto RESET_POINT_4;
         }
 
         int coverletter;
         RESET_POINT_5:
         coverletter = cover_letter();
-        printf("수를 잘못 누르셨으면 b를 눌러주세요");
 
         ch = getchar();
 
         if (ch == 'b') {
-            printf("입력값을 초기화합니다.\n");
             system("clear");
+            printf("수를 잘못 누르셨으면 b를 눌러주세요\n");
             goto RESET_POINT_5;
         }
 
@@ -96,13 +95,13 @@ int main(int argc, char const *argv[])
             int award;
             RESET_POINT_6:
             award = spec_award();
-            printf("수를 잘못 누르셨으면 b를 눌러주세요");
+            printf("수를 잘못 누르셨으면 b를 눌러주세요\n");
 
             ch = getchar();
 
             if (ch == 'b') {
-                printf("입력값을 초기화합니다.\n");
                 system("clear");
+                printf("수를 잘못 누르셨으면 b를 눌러주세요\n");
                 goto RESET_POINT_6;
             }
             printf("총 160점 중 %.3f점\n",normal_score/2 + senggibu + coverletter + award);
@@ -110,13 +109,13 @@ int main(int argc, char const *argv[])
             int award;
             RESET_POINT_7:
             award = spec_self();
-            printf("수를 잘못 누르셨으면 b를 눌러주세요");
+            printf("수를 잘못 누르셨으면 b를 눌러주세요\n");
 
             ch = getchar();
 
             if (ch == 'b') {
-                printf("입력값을 초기화합니다.\n");
                 system("clear");
+                printf("수를 잘못 누르셨으면 b를 눌러주세요\n");
                 goto RESET_POINT_7;
             }
             printf("총 160점 중 %.3f점\n",normal_score/2 + senggibu + coverletter + award);
