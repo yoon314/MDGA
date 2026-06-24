@@ -1,8 +1,7 @@
 {
-    "terminal.integrated.automationProfile.osx": {
-        "path": "/bin/zsh"
-    },
-    "terminal.integrated.automationProfile.windows": {
-        "path": "C:\\Windows\\System32\\WindowsPowerShell\\v1.0\\powershell.exe"
-    },
+    "code-runner.runInTerminal": true,
+    "code-runner.executorMap": {
+        "c": "cd $dir && gcc *.c -o $fileNameWithoutExt && ./$fileNameWithoutExt",
+        "cpp": "cd $dir && g++ -std=c++17 *.cpp -o $fileNameWithoutExt && ./$fileNameWithoutExt"
+    }
 }

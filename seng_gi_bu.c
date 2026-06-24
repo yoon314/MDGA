@@ -2,6 +2,8 @@
 #include <stdlib.h>
 #include "dimigo.h"
 
+// 생기부 점수를 계산하는 함수
+
 float seng_gi_bu(){
     float arr[5];
     printf("---------------------------------------------------------------------------\n");

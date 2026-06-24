@@ -2,6 +2,8 @@
 #include <stdlib.h>
 #include "dimigo.h"
 
+// 자기소개서 완성도를 계산하는 함수
+
 int cover_letter(){
     int point;
     printf("---------------------------------------------------------------------------\n");

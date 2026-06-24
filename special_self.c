@@ -2,7 +2,9 @@
 #include "dimigo.h"
 #include <stdlib.h>
 
-int spec_self(){
+// 자기 추천 완성도를 입력하는 함수
+
+int special_self(){
     printf(
     "---------------------------------------------------------------------------\n"
     "                            자기 추천 완성도 선택\n"   

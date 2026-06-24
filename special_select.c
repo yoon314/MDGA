@@ -2,7 +2,9 @@
 #include <stdlib.h>
 #include "dimigo.h"
 
-int spec_select()
+// 특별 전형 중 대회 입상과 자기추천 하나를 선택하는 함수
+
+int special_select()
 {
     int select_num;
     printf(

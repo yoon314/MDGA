@@ -3,7 +3,9 @@
 #include <stdlib.h>
 #include "dimigo.h"
 
-float sub_grade(){
+// 교과점수를 계산하는 함수
+
+float subject_grade(){
     int arr[5][6];
     char text[][50] = {"국어","수학","영어","사회","과학"};
     int grade[5][5];

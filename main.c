@@ -1,8 +1,8 @@
-// 홍의준: UI
-// 최정우: 서기
 #include <stdio.h>
 #include <stdlib.h>
 #include "dimigo.h"
+
+// 전체 코드를 실행하는 함수
 
 int main(int argc, char const *argv[])
 {
@@ -40,7 +40,7 @@ int main(int argc, char const *argv[])
 
     float normal_score;
     RESET_POINT_2:
-    normal_score = sub_grade(); // 일전 점수
+    normal_score = subject_grade(); // 일전 점수
     printf("수를 잘못 누르셨으면 b를 눌러주세요\n");
 
     ch = getchar();
@@ -68,7 +68,7 @@ int main(int argc, char const *argv[])
     if (select == 2){
         int spec;
         RESET_POINT_4:
-        spec = spec_select(); // 1. 대회입상, 2. 자기추천
+        spec = special_select(); // 1. 대회입상, 2. 자기추천
         printf("수를 잘못 누르셨으면 b를 눌러주세요\n");
 
         ch = getchar();
@@ -94,7 +94,7 @@ int main(int argc, char const *argv[])
         if (spec == 1){
             int award;
             RESET_POINT_6:
-            award = spec_award();
+            award = special_award();
             printf("수를 잘못 누르셨으면 b를 눌러주세요\n");
 
             ch = getchar();
@@ -109,7 +109,7 @@ int main(int argc, char const *argv[])
         } else if (spec == 2){
             int award;
             RESET_POINT_7:
-            award = spec_self();
+            award = special_self();
             printf("수를 잘못 누르셨으면 b를 눌러주세요\n");
 
             ch = getchar();
@@ -124,4 +124,5 @@ int main(int argc, char const *argv[])
     } else {
         printf("총 140점 중 %.3f점\n",normal_score+senggibu);
     }
+    return 0;
 }

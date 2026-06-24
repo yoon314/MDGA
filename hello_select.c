@@ -2,6 +2,7 @@
 #include <stdlib.h>
 #include "dimigo.h"
 
+// 입학 전형을 선택하는 함수
 
 int hello_select()
 {
