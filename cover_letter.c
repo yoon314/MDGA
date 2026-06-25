@@ -16,14 +16,23 @@ int cover_letter(){
     printf("5등급\n");
     printf("숫자만 입력\n");
     printf("입력 => ");
-
-    getchar();
     scanf("%d",&point);
+
+    char ch;
+    while ((point < 1) || (point > 5)){
+        ch = getchar();
+        while (getchar() != '\n');
+        if (ch == 'b') {
+            system("clear");
+            return -1;
+        } else {
+            printf("다시 입력 => ");
+            scanf("%d", &point);
+        }
+    }
+
     system("clear");
     printf("자기소개서 완성도: %c\n",point);
 
     return 20 - (point-1);
-
-
-
 }

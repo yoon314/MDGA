@@ -15,6 +15,18 @@ int hello_select()
     "---------------------------------------------------------------------------\n"
     "입력 => ");
     scanf("%d", &select_num);
+    char ch;
+    while ((select_num != 1) && (select_num != 2)){
+        ch = getchar();
+        while (getchar() != '\n');
+        if (ch == 'b') {
+            system("clear");
+            return -1;
+        } else {
+            printf("다시 입력 => ");
+            scanf("%d", &select_num);
+        }
+    }
     if (select_num == 1) {
         system("clear");
         printf("일반 전형 선택 확인\n");

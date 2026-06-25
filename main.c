@@ -4,6 +4,9 @@
 
 // 전체 코드를 실행하는 함수
 
+float tot;
+int tot2;
+
 int main(int argc, char const *argv[])
 {
     printf(
@@ -26,41 +29,26 @@ int main(int argc, char const *argv[])
     }
 
     int select;
-    RESET_POINT_1:
     select = hello_select(); // 1: 일전, 2: 특전
-    printf("수를 잘못 누르셨으면 b를 눌러주세요\n");
 
-    ch = getchar();
-
-    if (ch == 'b') {
-        system("clear");
-        printf("수를 잘못 누르셨으면 b를 눌러주세요\n");
-        goto RESET_POINT_1;
-    }
-
+    system("clear");
     float normal_score;
     RESET_POINT_2:
     normal_score = subject_grade(); // 일전 점수
-    printf("수를 잘못 누르셨으면 b를 눌러주세요\n");
 
-    ch = getchar();
-
-    if (ch == 'b') {
+    if ((int)normal_score == -1){
         system("clear");
-        printf("수를 잘못 누르셨으면 b를 눌러주세요\n");
         goto RESET_POINT_2;
     }
 
     float senggibu;
     RESET_POINT_3:
     senggibu = seng_gi_bu(); // 생기부 점수
-    printf("수를 잘못 누르셨으면 b를 눌러주세요\n");
 
     ch = getchar();
 
     if (ch == 'b') {
         system("clear");
-        printf("수를 잘못 누르셨으면 b를 눌러주세요\n");
         goto RESET_POINT_3;
     }
     
@@ -69,60 +57,61 @@ int main(int argc, char const *argv[])
         int spec;
         RESET_POINT_4:
         spec = special_select(); // 1. 대회입상, 2. 자기추천
-        printf("수를 잘못 누르셨으면 b를 눌러주세요\n");
 
-        ch = getchar();
-
-        if (ch == 'b') {
+        if (spec == -1){
             system("clear");
-            printf("수를 잘못 누르셨으면 b를 눌러주세요\n");
             goto RESET_POINT_4;
         }
+
 
         int coverletter;
         RESET_POINT_5:
         coverletter = cover_letter();
 
-        ch = getchar();
-
-        if (ch == 'b') {
+        if (coverletter == -1) {
             system("clear");
-            printf("수를 잘못 누르셨으면 b를 눌러주세요\n");
             goto RESET_POINT_5;
         }
 
+        int award;
         if (spec == 1){
-            int award;
             RESET_POINT_6:
             award = special_award();
-            printf("수를 잘못 누르셨으면 b를 눌러주세요\n");
 
-            ch = getchar();
-
-            if (ch == 'b') {
+            if (award == -1) {
                 system("clear");
-                printf("수를 잘못 누르셨으면 b를 눌러주세요\n");
                 goto RESET_POINT_6;
             }
             system("clear");
-            printf("총 160점 중 %.3f점\n",normal_score/2 + senggibu + coverletter + award);
+        
         } else if (spec == 2){
-            int award;
             RESET_POINT_7:
             award = special_self();
-            printf("수를 잘못 누르셨으면 b를 눌러주세요\n");
 
-            ch = getchar();
-
-            if (ch == 'b') {
+            if (award == -1) {
                 system("clear");
-                printf("수를 잘못 누르셨으면 b를 눌러주세요\n");
                 goto RESET_POINT_7;
             }
-            printf("총 160점 중 %.3f점\n",normal_score/2 + senggibu + coverletter + award);
         }
+        tot = normal_score/2 + senggibu + coverletter + award;
+        tot2 = 160;
     } else {
-        printf("총 140점 중 %.3f점\n",normal_score+senggibu);
+        tot = normal_score+senggibu;
+        tot2 = 140;
     }
+    system("clear");
+    printf(
+        "  =====================================================================\n"
+        "     ■■■■■■■      ■■■■   ■■      ■■   ■■■■     ■■■■■■        ■■■■  \n"
+        "     ■■     ■■     ■■    ■■■    ■■■    ■■    ■■      ■■    ■■    ■■ \n"
+        "     ■■      ■■    ■■    ■■■■  ■■■■    ■■    ■■           ■■      ■■\n"
+        "     ■■      ■■    ■■    ■■  ■■  ■■    ■■    ■■    ■■■■   ■■      ■■\n"
+        "     ■■     ■■     ■■    ■■      ■■    ■■    ■■      ■■    ■■    ■■ \n"
+        "     ■■■■■■■      ■■■■   ■■      ■■   ■■■■     ■■■■■■        ■■■■\n\n"
+        "   -------------------------------------------------------------------\n"
+        "                            총 %d점 중 %.3f점\n"
+        "                           프로그램을 종료합니다\n"
+        "  =====================================================================\n",tot2, tot);
+
     return 0;
 }
