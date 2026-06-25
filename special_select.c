@@ -19,16 +19,10 @@ int special_select()
     scanf("%d", &select_num);
     ch = getchar();
 
-    while ((select_num != 1) && (select_num != 2)){
-        ch = getchar();
+     while ((select_num != 1) && (select_num != 2)){
+        printf("다시 입력 => ");
+        scanf("%d", &select_num);
         while (getchar() != '\n');
-        if (ch == 'b') {
-            system("clear");
-            return -1;
-        } else {
-            printf("다시 입력 => ");
-            scanf("%d", &select_num);
-        }
     }
     if (select_num == 1) {
         system("clear");
