@@ -39,11 +39,11 @@ float subject_grade(){
                     return -1;
                 } else {
                     printf("다시 입력하세요 (0 ~ 100 사이의 숫자만 가능)\n");
+                    printf("                %d학년 %d학기 %s 점수: ",i/2+1,cur,text[j-1]);
+                    scanf("%d", &arr[i-1][j-1]);
                     ch = getchar();
                     if (ch == 'b'){
                         return -1;
-                    } else {
-                        scanf("%d", &arr[i-1][j-1]);
                     }
                 }
             }
