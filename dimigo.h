@@ -1,8 +1,8 @@
 #ifndef dimigo
 #define dimigo
 
-int hello_select(void);
-float subject_grade(void);
+int hello_select();
+float subject_grade();
 int special_select();
 float seng_gi_bu();
 int cover_letter();
