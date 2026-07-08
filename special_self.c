@@ -39,5 +39,5 @@ int special_self(){
     system("clear");
     printf("자기추천 완성도: %d등급 선택 완료\n",n);
 
-    return 20 - (n-1);
+    return 60 - (n-1);
 }

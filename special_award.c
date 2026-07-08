@@ -20,13 +20,13 @@ int special_award(){
     scanf("%d",&contest);
     char ch;
     while ((contest < 1) || (contest > 3)){
+        printf("대회 다시 입력 => ");
         ch = getchar(); 
         while (getchar() != '\n');
         if (ch == 'b') {
             system("clear");
             return -1;
         } else {
-            printf("대회 다시 입력 => ");
             scanf("%d", &contest);
         }
     }
