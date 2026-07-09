@@ -51,7 +51,7 @@ int special_award(){
     }
 
     int tot = 0;
-    if (contest == 3){
+    if (contest == 1){
         if (point >= 3){
             tot += 60;
         } else if (point == 2){
